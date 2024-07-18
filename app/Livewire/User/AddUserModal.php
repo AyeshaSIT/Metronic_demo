@@ -99,7 +99,7 @@ class AddUserModal extends Component
                 $user->assignRole($this->role);
 
                 // Send a password reset link to the user's email
-                Password::sendResetLink($user->only('email'));
+                // Password::sendResetLink($user->only('email'));
 
                 // Emit a success event with a message
                 $this->dispatch('success', __('New user created'));
