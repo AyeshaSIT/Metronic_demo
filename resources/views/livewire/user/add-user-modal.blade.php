@@ -18,8 +18,8 @@
             <!--begin::Modal body-->
             <div class="modal-body px-5 my-7">
                 <!--begin::Form-->
-                <form id="kt_modal_add_user_form" class="form" action="#" wire:submit="submit" enctype="multipart/form-data">
-                    <input type="hidden" wire:model="user_id" name="user_id" value="{{ $user_id }}"/>
+                <form id="kt_modal_add_user_form" class="form" action="#" wire:submit.prevent="submit" enctype="multipart/form-data">
+                    <input type="hidden" wire:model.defer="user_id" name="user_id" value="{{ $user_id }}"/>
                     <!--begin::Scroll-->
                     <div class="d-flex flex-column scroll-y px-5 px-lg-10" id="kt_modal_add_user_scroll" data-kt-scroll="true" data-kt-scroll-activate="true" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_user_header" data-kt-scroll-wrappers="#kt_modal_add_user_scroll" data-kt-scroll-offset="300px">
                         <!--begin::Input group-->
@@ -81,7 +81,7 @@
                             <label class="required fw-semibold fs-6 mb-2">Full Name</label>
                             <!--end::Label-->
                             <!--begin::Input-->
-                            <input type="text" wire:model="name" name="name" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Full name"/>
+                            <input type="text" wire:model.defer="name" name="name" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Full name"/>
                             <!--end::Input-->
                             @error('name')
                             <span class="text-danger">{{ $message }}</span> @enderror
@@ -93,7 +93,7 @@
                             <label class="required fw-semibold fs-6 mb-2">Email</label>
                             <!--end::Label-->
                             <!--begin::Input-->
-                            <input type="email" wire:model="email" name="email" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="example@domain.com"/>
+                            <input type="email" wire:model.defer="email" name="email" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="example@domain.com"/>
                             <!--end::Input-->
                             @error('email')
                             <span class="text-danger">{{ $message }}</span> @enderror
@@ -113,7 +113,7 @@
                                     <!--begin::Radio-->
                                     <div class="form-check form-check-custom form-check-solid">
                                         <!--begin::Input-->
-                                        <input class="form-check-input me-3" id="kt_modal_update_role_option_{{ $role->id }}" wire:model="role" name="role" type="radio" value="{{ $role->name }}" checked="checked"/>
+                                        <input class="form-check-input me-3" id="kt_modal_update_role_option_{{ $role->id }}" wire:model.defer="role" name="role" type="radio" value="{{ $role->name }}" checked="checked"/>
                                         <!--end::Input-->
                                         <!--begin::Label-->
                                         <label class="form-check-label" for="kt_modal_update_role_option_{{ $role->id }}">

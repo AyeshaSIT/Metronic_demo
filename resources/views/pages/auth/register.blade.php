@@ -1,10 +1,10 @@
 <x-auth-layout>
 
     <!--begin::Form-->
-    <form class="form w-100" novalidate="novalidate" id="kt_sign_up_form" data-kt-redirect-url="{{ route('login') }}" action="{{ route('register') }}">
+    <form class="card-body flex flex-col gap-5 p-10" novalidate="novalidate" id="kt_sign_up_form" data-kt-redirect-url="{{ route('login') }}" action="{{ route('register') }}">
         @csrf
         <!--begin::Heading-->
-        <div class="text-center mb-11">
+        <div class="text-center mb-5">
             <!--begin::Title-->
             <h1 class="text-gray-900 fw-bolder mb-3">
                 Sign Up
@@ -12,9 +12,15 @@
             <!--end::Title-->
 
             <!--begin::Subtitle-->
-            <div class="text-gray-500 fw-semibold fs-6">
-                Your Social Campaigns
-            </div>
+                <!--begin::Sign up-->
+                <div class="text-gray-500 text-center fw-semibold fs-6">
+                    Already have an Account?
+
+                    <a href="/login" class="link-primary fw-semibold">
+                        Sign in
+                    </a>
+                </div>
+                <!--end::Sign up-->
             <!--end::Subtitle--->
         </div>
         <!--begin::Heading-->
@@ -26,7 +32,7 @@
                 <!--begin::Google link--->
                 <a href="#" class="btn btn-flex btn-outline btn-text-gray-700 btn-active-color-primary bg-state-light flex-center text-nowrap w-100">
                     <img alt="Logo" src="{{ image('svg/brand-logos/google-icon.svg') }}" class="h-15px me-3"/>
-                    Sign in with Google
+                    Use Google
                 </a>
                 <!--end::Google link--->
             </div>
@@ -38,7 +44,7 @@
                 <a href="#" class="btn btn-flex btn-outline btn-text-gray-700 btn-active-color-primary bg-state-light flex-center text-nowrap w-100">
                     <img alt="Logo" src="{{ image('svg/brand-logos/apple-black.svg') }}" class="theme-light-show h-15px me-3"/>
                     <img alt="Logo" src="{{ image('svg/brand-logos/apple-black-dark.svg') }}" class="theme-dark-show h-15px me-3"/>
-                    Sign in with Apple
+                    Use Apple
                 </a>
                 <!--end::Google link--->
             </div>
@@ -47,7 +53,7 @@
         <!--end::Login options-->
 
         <!--begin::Separator-->
-        <div class="separator separator-content my-14">
+        <div class="separator separator-content my-8">
             <span class="w-125px text-gray-500 fw-semibold fs-7">Or with email</span>
         </div>
         <!--end::Separator-->
@@ -123,22 +129,12 @@
         <!--end::Input group--->
 
         <!--begin::Submit button-->
-        <div class="d-grid mb-10">
+        <div class="d-grid">
             <button type="submit" id="kt_sign_up_submit" class="btn btn-primary">
                 @include('partials/general/_button-indicator', ['label' => 'Sign Up'])
             </button>
         </div>
         <!--end::Submit button-->
-
-        <!--begin::Sign up-->
-        <div class="text-gray-500 text-center fw-semibold fs-6">
-            Already have an Account?
-
-            <a href="/login" class="link-primary fw-semibold">
-                Sign in
-            </a>
-        </div>
-        <!--end::Sign up-->
     </form>
     <!--end::Form-->
 

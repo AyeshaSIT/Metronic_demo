@@ -142,6 +142,6 @@ class AddUserModal extends Component
     {
         $this->resetErrorBag();
         $this->resetValidation();
-        $this->reset();
+        // $this->reset();
     }
 }
